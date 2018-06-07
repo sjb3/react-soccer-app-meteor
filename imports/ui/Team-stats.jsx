@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { H2 } from '../styled/App.style';
 
 export default class TeamStats extends Component {
   render() {
     return (
-      <h2>Team Stats</h2>
+      <H2>Team Stats</H2>
     )
   }
 }

@@ -8,6 +8,11 @@ export const H2 = styled.div`
   &:hover {
     color: yellow;
     font-size: 4em;
-    text-decoration: underline;
+    font-style: italic;
+  }
+`
+export const Button = styled.button`
+  &:hover {
+
   }
 `
