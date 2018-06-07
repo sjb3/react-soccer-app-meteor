@@ -1,13 +1,15 @@
-'use strict';
-
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
+// material ui
+import Avatar from 'material-ui/Avatar';
+import { ListItem } from 'material-ui/List';
 
 export default class TeamList extends Component {
   render() {
     return (
-      <h1>Team List</h1>
+      <ListItem
+        primaryText={this.props.player.name}
+        leftAvatar={<Avatar src='COLTON_FORD.jpg' />}
+      />
     )
   }
 }

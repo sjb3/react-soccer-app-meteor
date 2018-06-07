@@ -1,13 +1,9 @@
-'use strict';
-
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
 
 export default class TeamStats extends Component {
   render() {
     return (
-      <h1>Team Stats</h1>
+      <h2>Team Stats</h2>
     )
   }
 }
