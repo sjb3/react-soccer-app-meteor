@@ -1,15 +1,16 @@
 {
-  "name": "react-soccer-app",
+  "name": "soccer-app",
   "private": true,
   "scripts": {
     "start": "meteor run"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.42",
-    "material-ui": "^0.20.1",
+    "@babel/runtime": "^7.0.0-beta.36",
+    "material-ui": "^0.20.0",
     "meteor-node-stubs": "^0.3.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-tap-event-plugin": "^3.0.3"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-tap-event-plugin": "^3.0.2",
+    "styled-components": "^3.3.2"
   }
 }
