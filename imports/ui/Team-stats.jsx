@@ -1,3 +1,5 @@
+'use strict';
+
 import React, { Component } from 'react';
 import { H2 } from '../styled/App.style';
 

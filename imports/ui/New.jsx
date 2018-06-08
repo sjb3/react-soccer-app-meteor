@@ -29,7 +29,7 @@ class New extends Component {
   render() {
     return (
       <div className="row">
-        <form onSubmit={this.submitPlayer.bind(this)} style={{ fontStyle: 'italic', background: 'white' }} className="col s12">
+        <form onSubmit={this.submitPlayer.bind(this)} style={{ fontStyle: 'italic', background: 'white', color: 'black' }} className="col s12">
           <h3 style={{ textAlign: 'center' }}>Add a New Player</h3>
 
           <div className="row">

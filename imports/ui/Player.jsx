@@ -27,7 +27,7 @@ export default class Player extends Component {
         <CardMedia
           overlay={<CardTitle titleStyle={{ fontSize: 20, fontFamily: 'Satisfy' }} title="Colton Ford" subtitle="Falcon's" />}
         >
-          <img src='COLTON_FORD.jpg' />
+          <img src='NICCOLO_NERI.jpg' />
         </CardMedia>
         <CardText>
           <div style={styles.wrapper}>
@@ -36,7 +36,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
             <Avatar size={32} color={red100} backgroundColor={red500}>
-              4.5
+              3
             </Avatar>
             Balls Stretchiness
           </Chip>
@@ -45,7 +45,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            5
+            2.5
           </Avatar>
           Explosiveness at Climax
         </Chip>
@@ -54,7 +54,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            4
+            3
           </Avatar>
           Topping aptitude
         </Chip>
@@ -63,7 +63,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            2.5
+            3
           </Avatar>
           Versatile Capabilities
         </Chip>
@@ -72,7 +72,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            2
+            3
           </Avatar>
           Appreciating d'Orifice
         </Chip>
@@ -81,7 +81,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            1.5
+            3
           </Avatar>
           Kissing?
         </Chip>
@@ -90,16 +90,16 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            4
+            3
           </Avatar>
-          General Game Strategy
+          General Enthusiasm
         </Chip>
         <Chip
           backgroundColor={red100}
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            2
+            2.5
           </Avatar>
           Coaxing for more?
         </Chip>
