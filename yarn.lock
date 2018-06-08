@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.0.0-beta.36", "@babel/runtime@^7.0.0-beta.42":
+"@babel/runtime@^7.0.0-beta.42", "@babel/runtime@^7.0.0-beta.49":
   version "7.0.0-beta.49"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.49.tgz#03b3bf07eb982072c8e851dd2ddd5110282e61bf"
   dependencies:
@@ -939,7 +939,7 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-simpl-schema@^1.4.2:
+simpl-schema@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/simpl-schema/-/simpl-schema-1.5.0.tgz#f90809c5ffb9fe7c4232a1b1d805c51862650f1a"
   dependencies:
