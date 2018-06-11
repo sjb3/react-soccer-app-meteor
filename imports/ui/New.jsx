@@ -8,7 +8,8 @@ import { Players } from '../api/players';
 class New extends Component {
   submitPlayer(e) {
     e.preventDefault();
-    Players.insert({
+
+    let Player = {
       name: this.refs.name.value,
       team: this.refs.team.value,
       balls_stretchiness: this.refs.balls_stretchiness.value,
@@ -21,9 +22,16 @@ class New extends Component {
       coaxing_for_more: this.refs.coaxing_for_more.value,
       notes: this.refs.notes.value,
       createdAt: new Date(),
+      owner: Meteor.userId(),
+    }
+    // console.log('Successfully submitted!');
+    Meteor.call('insertPlayer', Player, (err) => {
+      if(err) {
+        alert(`ERROR! ${err.message}`)
+      }
+      alert('Player added')
+      this.props.history.push('/'); // pushing to the main page
     })
-    console.log('Successfully submitted!');
-    this.props.history.push('/'); // pushing to the main page
   }
 
   render() {
