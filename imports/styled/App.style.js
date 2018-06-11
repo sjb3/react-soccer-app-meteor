@@ -6,7 +6,7 @@ export const H2 = styled.div`
   font-family: 'Cute Font';
   font-size: 4em;
   &:hover {
-    color: white;
+    color: grey;
     font-size: 4em;
     font-style: italic;
   }

@@ -21,22 +21,25 @@ const styles = {
 };
 
 export default class Player extends Component {
+
   render() {
+    const { player } = this.props;
     return (
       <Card>
         <CardMedia
-          overlay={<CardTitle titleStyle={{ fontSize: 20, fontFamily: 'Satisfy' }} title="Colton Ford" subtitle="Falcon's" />}
+          overlay={<CardTitle titleStyle={{ fontSize: 20, fontFamily: 'Satisfy' }} title={player.name} subtitle={player.team} />}
         >
-          <img src='NICCOLO_NERI.jpg' />
+          <img src='BUCK_HAYES.jpg' />
+          {/* <img src={player.image_Url} /> */}
         </CardMedia>
-        <CardText>
+        <CardText>general_enthusiasm
           <div style={styles.wrapper}>
           <Chip
           backgroundColor={red100}
           style={styles.chip}
           >
             <Avatar size={32} color={red100} backgroundColor={red500}>
-              3
+              {player.balls_stretchiness}
             </Avatar>
             Balls Stretchiness
           </Chip>
@@ -45,7 +48,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            2.5
+            {player.explosiveness_at_climax}
           </Avatar>
           Explosiveness at Climax
         </Chip>
@@ -54,7 +57,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            3
+            {player.topping_aptitude}
           </Avatar>
           Topping aptitude
         </Chip>
@@ -63,7 +66,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            3
+            {player.versatile_capabilities}
           </Avatar>
           Versatile Capabilities
         </Chip>
@@ -72,7 +75,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            3
+            {player.appreciating_dOrifice}
           </Avatar>
           Appreciating d'Orifice
         </Chip>
@@ -81,7 +84,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            3
+            {player.kissing}
           </Avatar>
           Kissing?
         </Chip>
@@ -90,7 +93,7 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            3
+            {player.general_enthusiasm}
           </Avatar>
           General Enthusiasm
         </Chip>
@@ -99,9 +102,16 @@ export default class Player extends Component {
           style={styles.chip}
           >
           <Avatar size={32} color={red100} backgroundColor={red500}>
-            2.5
+            {player.coaxing_for_more}
           </Avatar>
           Coaxing for more?
+        </Chip>
+
+        <Chip
+          backgroundColor={red100}
+          style={styles.chip}
+          >
+          note: {player.notes}
         </Chip>
         </div>
         </CardText>

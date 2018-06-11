@@ -26,66 +26,39 @@ import { H2 } from '../styled/App.style';
 
 import AccountsWrapper from './AccountsWrapper';
 
+const tempPlayer = {
+  name: 'Temp Player',
+  team: 'Vers',
+  balls_stretchiness: 3,
+  explosiveness_at_climax: 3,
+  topping_aptitude: 3,
+  versatile_capabilities: 3,
+  appreciating_dOrifice: 3,
+  kissing: 3,
+  general_enthusiasm: 3,
+  coaxing_for_more: 3,
+  notes: 'Temp Note',
+  image_Url: 'RICK_WOLFMIER.jpg'
+}
+
 export class App extends Component {
   constructor(props) {
     super(props);
-    // set up state
-    this.state = { playsers: [] };
+    // set up state with default data
+    this.state = { currentPlayer: tempPlayer };
+    this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
   }
-  // if components mount, load new state
-  // componentWillMount() {
-  //   this.setState({ players: [
-  //     {
-  //       _id: 1,
-  //       name: 'COLTON FORD',
-  //       balls_stretchiness: 'N/A',
-  //       explosiveness_at_climax: 'N/A',
-  //       topping_aptitude: 'N/A',
-  //       versatile_capabilities: 'N/A',
-  //       appreciating_dOrifice: 'N/A',
-  //       kissing: 'N/A',
-  //       general_game_strategy: 'N/A',
-  //       coaxing_for_more: 'N/A',
-  //       image_url: 'COLTON_FORD.jpg'
-  //     },
-  //     {
-  //       _id: 2,
-  //       name: 'NICCOLO NERI',
-  //       balls_stretchiness: 'N/A',
-  //       explosiveness_at_climax: 'N/A',
-  //       topping_aptitude: 'N/A',
-  //       versatile_capabilities: 'N/A',
-  //       appreciating_dOrifice: 'N/A',
-  //       kissing: 'N/A',
-  //       general_game_strategy: 'N/A',
-  //       coaxing_for_more: 'N/A',
-  //       image_url: 'NICCOLO_NERI.jpg'
-  //     },
-  //     {
-  //       _id: 3,
-  //       name: 'KRIS EVANS',
-  //       balls_stretchiness: 3,
-  //       explosiveness_at_climax: 3,
-  //       topping_aptitude: 3,
-  //       versatile_capabilities: 3,
-  //       appreciating_dOrifice: 3,
-  //       kissing: 2,
-  //       general_game_strategy: 3,
-  //       coaxing_for_more: 3,
-  //       image_url: 'KRIS_EVANS.jpg'
-  //     }
-  //   ]});
-  // }
 
-  // renderPlayers() {
-  //   return this.props.players.map(player => (
-  //     <TeamList key={player._id} player={player} />
-  //   ));
-  // }
   renderPlayers() {
     return this.props.players.map(player => (
-      <TeamList key={player._id}>{player}</TeamList>
+      <TeamList key={player._id} player={player} updateCurrentPlayer={this.updateCurrentPlayer}/>
     ));
+  }
+
+  updateCurrentPlayer(player) {
+    this.setState({
+      currentPlayer: player,
+    });
   }
 
   render() {
@@ -101,7 +74,7 @@ export class App extends Component {
           <AccountsWrapper />
           </AppBar>
           <div>
-            <div className='col s12 m7'><Player /></div>
+            <div className='col s12 m7'><Player player={this.state.currentPlayer}/></div>
             <div className='col s12 m5'>
               <H2>Team List</H2>
                 <Link to='/new' className='waves-effect waves-light btn'>Add Player</Link>
