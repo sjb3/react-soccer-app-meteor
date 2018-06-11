@@ -24,14 +24,7 @@ import Player from './Player';
 // for styling
 import { H2 } from '../styled/App.style';
 
-// const styles = theme => ({
-//   button: {
-//     margin: theme.spacing.unit,
-//   },
-//   input: {
-//     display: 'none',
-//   },
-// });
+import AccountsWrapper from './AccountsWrapper';
 
 export class App extends Component {
   constructor(props) {
@@ -104,7 +97,9 @@ export class App extends Component {
             title='Model App'
             iconClassNameRight='muidocs-icon-navigation-expand-more'
             showMenuIconButton={false}
-          />
+          >
+          <AccountsWrapper />
+          </AppBar>
           <div>
             <div className='col s12 m7'><Player /></div>
             <div className='col s12 m5'>
@@ -130,8 +125,9 @@ App.propTypes = {
 
 export default createContainer(() => {
   Meteor.subscribe('players');
+  const user = Meteor.userId();
 
   return {
-    players: Players.find({}, { sort: { name: 1}}).fetch(),
+    players: Players.find({ owner: user }, { sort: { name: 1}}).fetch(),
   };
 }, App);
