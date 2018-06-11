@@ -24,7 +24,7 @@ class New extends Component {
       createdAt: new Date(),
       owner: Meteor.userId(),
     }
-    // console.log('Successfully submitted!');
+    // console.log('Success', Player);
     Meteor.call('insertPlayer', Player, (err) => {
       if(err) {
         alert(`ERROR! ${err.message}`)
