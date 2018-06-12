@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Card, CardMedia, CardTitle, CardText, CardActions } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
@@ -17,22 +17,31 @@ const styles = {
   },
   button: {
     margin: 12,
+    fontStyle: 'italic'
   },
 };
 
 export default class Player extends Component {
+  showEditForm () {
+    this.props.showEditForm();
+  }
 
   render() {
     const { player } = this.props;
+    const topNess = player.balls_stretchiness + player.explosiveness_at_climax + player.topping_aptitude + player.versatile_capabilities + player.appreciating_dOrifice + player.kissing + player.coaxing_for_more
+    // console.log(`${player.image_Url}`, player.image_Url);
+
     return (
       <Card>
         <CardMedia
-          overlay={<CardTitle titleStyle={{ fontSize: 20, fontFamily: 'Satisfy' }} title={player.name} subtitle={player.team} />}
+          overlay={<CardTitle titleStyle={{ fontSize: 20, fontFamily: 'Satisfy' }} title={player.name} subtitle={`${player.team}, Top Score: ${topNess}/24`} />}
         >
           <img src='BUCK_HAYES.jpg' />
+          <Fragment />{this.props.topNess}
           {/* <img src={player.image_Url} /> */}
         </CardMedia>
-        <CardText>general_enthusiasm
+
+        <CardText>
           <div style={styles.wrapper}>
           <Chip
           backgroundColor={red100}
@@ -88,7 +97,7 @@ export default class Player extends Component {
           </Avatar>
           Kissing?
         </Chip>
-        <Chip
+        {/* <Chip
           backgroundColor={red100}
           style={styles.chip}
           >
@@ -96,7 +105,7 @@ export default class Player extends Component {
             {player.general_enthusiasm}
           </Avatar>
           General Enthusiasm
-        </Chip>
+        </Chip> */}
         <Chip
           backgroundColor={red100}
           style={styles.chip}
@@ -116,7 +125,12 @@ export default class Player extends Component {
         </div>
         </CardText>
         <CardActions>
-
+          <RaisedButton
+            label='Edit Model'
+            labelPosition='before'
+            style={styles.button}
+            onClick={this.showEditForm.bind(this)}
+          />
         </CardActions>
       </Card>
     )

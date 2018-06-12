@@ -21,6 +21,7 @@ import { Players } from '../api/players';
 import TeamList from './Team-list';
 import TeamStats from './Team-stats';
 import Player from './Player';
+import Edit from './EditPlayer';
 // for styling
 import { H2 } from '../styled/App.style';
 
@@ -29,14 +30,14 @@ import AccountsWrapper from './AccountsWrapper';
 const tempPlayer = {
   name: 'Temp Player',
   team: 'Vers',
-  balls_stretchiness: 3,
-  explosiveness_at_climax: 3,
-  topping_aptitude: 3,
-  versatile_capabilities: 3,
-  appreciating_dOrifice: 3,
-  kissing: 3,
-  general_enthusiasm: 3,
-  coaxing_for_more: 3,
+  balls_stretchiness: 0,
+  explosiveness_at_climax: 0,
+  topping_aptitude: 0,
+  versatile_capabilities: 0,
+  appreciating_dOrifice: 0,
+  kissing: 0,
+  // general_enthusiasm: 0,
+  coaxing_for_more: 0,
   notes: 'Temp Note',
   image_Url: 'RICK_WOLFMIER.jpg'
 }
@@ -45,8 +46,13 @@ export class App extends Component {
   constructor(props) {
     super(props);
     // set up state with default data
-    this.state = { currentPlayer: tempPlayer };
+    this.state = {
+      currentPlayer: tempPlayer,
+      showEditPlayer: false,
+    };
     this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
+    this.showEditForm = this.showEditForm.bind(this);
+    this.showTeamStats = this.showTeamStats.bind(this);
   }
 
   renderPlayers() {
@@ -59,6 +65,26 @@ export class App extends Component {
     this.setState({
       currentPlayer: player,
     });
+  }
+
+  showEditForm() {
+    this.setState({
+      showEditPlayer: true,
+    })
+  }
+
+  showTeamStats() {
+    this.setState({
+      showEditPlayer: false,
+    })
+  }
+
+  showForm() {
+    if(this.state.showEditPlayer === true) {
+      return (<Edit currentPlayer={this.state.currentPlayer} showTeamStats={this.showTeamStats} />);
+    } else {
+      return (<TeamStats />);
+    }
   }
 
   render() {
@@ -74,7 +100,9 @@ export class App extends Component {
           <AccountsWrapper />
           </AppBar>
           <div>
-            <div className='col s12 m7'><Player player={this.state.currentPlayer}/></div>
+            <div className='col s12 m7'>
+              <Player player={this.state.currentPlayer} showEditForm={this.showEditForm}/>
+            </div>
             <div className='col s12 m5'>
               <H2>Team List</H2>
                 <Link to='/new' className='waves-effect waves-light btn'>Add Player</Link>
@@ -84,7 +112,7 @@ export class App extends Component {
                 </List>
               <Divider />
             </div>
-            <div className='col s12 m5'><TeamStats /></div>
+            <div className='col s12 m5'>{this.showForm()}</div>
           </div>
         </div>
       </MuiThemeProvider>
