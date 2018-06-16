@@ -83,7 +83,7 @@ export class App extends Component {
     if(this.state.showEditPlayer === true) {
       return (<Edit currentPlayer={this.state.currentPlayer} showTeamStats={this.showTeamStats} />);
     } else {
-      return (<TeamStats />);
+      return (<TeamStats players={this.props.players}/>);
     }
   }
 
@@ -112,7 +112,14 @@ export class App extends Component {
                 </List>
               <Divider />
             </div>
-            <div className='col s12 m5'>{this.showForm()}</div>
+          </div>
+          <div className='row'>
+            <div className='col s12'>
+              <br />
+              <Divider />
+              {this.showForm()}
+              <Divider />
+            </div>
           </div>
         </div>
       </MuiThemeProvider>
