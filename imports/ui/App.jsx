@@ -96,6 +96,7 @@ export class App extends Component {
             title='Model App'
             iconClassNameRight='muidocs-icon-navigation-expand-more'
             showMenuIconButton={false}
+            style={{backgroundColor: '#0277BD'}}
           >
           <AccountsWrapper />
           </AppBar>
@@ -105,7 +106,7 @@ export class App extends Component {
             </div>
             <div className='col s12 m5'>
               <H2>Team List</H2>
-                <Link to='/new' className='waves-effect waves-light btn'>Add Player</Link>
+                <Link to='/new' className='waves-effect waves-light btn light-blue darken-3'>Add Player</Link>
               <Divider />
                 <List>
                   {this.renderPlayers()}
