@@ -38,6 +38,10 @@ export default class TeamStats extends Component {
       return coaxing_for_more + player.coaxing_for_more;
     }, 0) / (3 * numPlayers )) * 100);
 
+    const top = Math.round((balls_stretchiness + explosiveness_at_climax + topping_aptitude + appreciating_dOrifice)/4)
+    const bottom = Math.round((versatile_capabilities + kissing + coaxing_for_more)/3)
+    const total = Math.round((top + bottom)/2)
+
     const data = {
       labels: ['Balls Stretchiness', 'Explosiveness at Climax', 'Topping Aptitude', 'Versatile Capabilities', 'Appreciating dOrifice', 'Kissing', 'Coaxing for More?'],
       datasets: [
@@ -71,11 +75,11 @@ export default class TeamStats extends Component {
         <div className='col s12 m5'>
           <h4>Scores in % of max possible</h4>
           <Divider />
-          <h4>Team's offense 45%</h4>
-          <h4>Team's defense 45%</h4>
-          <h4>Team's total 45%</h4>
+          <h4>Team's Top: {top} %</h4>
+          <h4>Team's Bottom: {bottom} %</h4>
+          <h4>Team's Total: {total} %</h4>
           <Divider />
-          <h4>Number of players</h4>
+          <h4>Number of players: {numPlayers}</h4>
 
         </div>
       </div>
